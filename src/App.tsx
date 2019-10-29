@@ -1,13 +1,19 @@
 import React from 'react';
-import PokemonSearch from './components/PokemonSearch';
-import './App.css';
+import { Counter } from './Counter';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <PokemonSearch name='jon' numberOfPokemons={5} />
+    <div>
+      <Counter>
+        {({ count, setCount }) => (
+          <div>
+            {count}
+            <button onClick={() => setCount(count + 1)}>+</button>
+          </div>
+        )}
+      </Counter>
     </div>
   );
-}
+};
 
 export default App;
